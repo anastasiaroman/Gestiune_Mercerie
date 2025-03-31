@@ -1,0 +1,12 @@
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\obj\Debug\Mercerie.csproj.AssemblyReference.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\obj\Debug\Mercerie.csproj.CoreCompileInputs.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\Mercerie.exe.config
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\Mercerie.exe
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\Mercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\obj\Debug\Mercerie.exe
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\obj\Debug\Mercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\EvidentaMercerie.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\NivelStocareDate.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\EvidentaMercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\bin\Debug\NivelStocareDate.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\Mercerie\obj\Debug\Mercerie.csproj.Up2Date

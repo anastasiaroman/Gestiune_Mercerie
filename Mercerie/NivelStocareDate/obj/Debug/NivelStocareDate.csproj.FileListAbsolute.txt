@@ -1,0 +1,9 @@
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\bin\Debug\NivelStocareDate.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\bin\Debug\NivelStocareDate.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\bin\Debug\EvidentaMercerie.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\bin\Debug\EvidentaMercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\obj\Debug\NivelStocareDate.csproj.AssemblyReference.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\obj\Debug\NivelStocareDate.csproj.CoreCompileInputs.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\obj\Debug\NivelSto.ECC26E05.Up2Date
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\obj\Debug\NivelStocareDate.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\NivelStocareDate\obj\Debug\NivelStocareDate.pdb

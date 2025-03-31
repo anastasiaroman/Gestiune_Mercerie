@@ -1,0 +1,6 @@
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\bin\Debug\EvidentaMercerie.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\bin\Debug\EvidentaMercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\obj\Debug\EvidentaMercerie.csproj.AssemblyReference.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\obj\Debug\EvidentaMercerie.csproj.CoreCompileInputs.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\obj\Debug\EvidentaMercerie.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\EvidentaMercerie\obj\Debug\EvidentaMercerie.pdb
