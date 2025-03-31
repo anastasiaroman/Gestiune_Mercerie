@@ -10,12 +10,14 @@ namespace Mercerie
     {
         public int Id { get; set; }
         public string Nume { get; set; }
+        public string Telefon { get; set; }
         public List<Produs> Comenzi { get; set; } = new List<Produs>();
 
-        public Client(int id, string nume)
+        public Client(int id, string nume, string telefon)
         {
             Id = id;
             Nume = nume;
+            Telefon = telefon;
         }
 
         public void AdaugaComanda(Produs produs)
@@ -25,7 +27,8 @@ namespace Mercerie
 
         public override string ToString()
         {
-            return $"ID: {Id}, Nume: {Nume}, Comenzi: {Comenzi.Count}";
+            string comenziStr = Comenzi.Count > 0 ? string.Join("; ", Comenzi.Select(p => p.Nume)) : "Nicio comanda";
+            return $"ID: {Id}, Nume: {Nume}, Telefon: {Telefon}, Comenzi: {comenziStr}";
         }
     }
 }

@@ -14,7 +14,8 @@ namespace Mercerie
 
         public void SalveazaClient(Client client)
         {
-            File.AppendAllText(filePath, $"{client.Id},{client.Nume}\n");
+            string comenzi = client.Comenzi.Count > 0 ? string.Join("|", client.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}")) : "Nicio comanda";
+            File.AppendAllText(filePath, $"{client.Id},{client.Nume},{client.Telefon},{comenzi}\n");
         }
 
         public List<Client> CitesteClienti()
@@ -25,13 +26,35 @@ namespace Mercerie
                 foreach (var line in File.ReadAllLines(filePath))
                 {
                     var parts = line.Split(',');
-                    if (parts.Length == 2)
+                    if (parts.Length >= 3)
                     {
-                        clienti.Add(new Client(int.Parse(parts[0]), parts[1]));
+                        var client = new Client(int.Parse(parts[0]), parts[1], parts[2]);
+                        if (parts.Length > 3 && parts[3] != "Nicio comanda")
+                        {
+                            var produse = parts[3].Split('|');
+                            foreach (var produs in produse)
+                            {
+                                var detalii = produs.Split('-');
+                                if (detalii.Length == 3)
+                                {
+                                    client.AdaugaComanda(new Produs(int.Parse(detalii[0]), detalii[1], double.Parse(detalii[2])));
+                                }
+                            }
+                        }
+                        clienti.Add(client);
                     }
                 }
             }
             return clienti;
         }
+
+        public void SalveazaTotiClientii(List<Client> clienti)
+        {
+            File.WriteAllLines(filePath, clienti.Select(c => {
+                string comenzi = c.Comenzi.Count > 0 ? string.Join("|", c.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}")) : "Nicio comanda";
+                return $"{c.Id},{c.Nume},{c.Telefon},{comenzi}";
+            }));
+        }
     }
+
 }
