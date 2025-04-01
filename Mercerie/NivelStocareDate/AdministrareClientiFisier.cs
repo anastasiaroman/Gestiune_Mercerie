@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Mercerie;
+using EvidentaMercerie;
 
 namespace Mercerie
 {
@@ -35,9 +36,9 @@ namespace Mercerie
                             foreach (var produs in produse)
                             {
                                 var detalii = produs.Split('-');
-                                if (detalii.Length == 3)
+                                if (detalii.Length == 4) // Adjusted to 4 to include 'tip'
                                 {
-                                    client.AdaugaComanda(new Produs(int.Parse(detalii[0]), detalii[1], double.Parse(detalii[2])));
+                                    client.AdaugaComanda(new Produs(int.Parse(detalii[0]), detalii[1], double.Parse(detalii[2]), (TipProdus)Enum.Parse(typeof(TipProdus), detalii[3])));
                                 }
                             }
                         }

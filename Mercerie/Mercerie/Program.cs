@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvidentaMercerie;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,71 +12,112 @@ namespace Mercerie
     {
         static void Main()
         {
-            var adminMem = new AdministrareClientiMemorie();
-            var adminFis = new AdministrareClientiFisier();
-            var stoc = new Stoc();
+            List<Client> clienti = new List<Client>();
+            List<Produs> produse = new List<Produs>();
 
-            while (true)
+
+            bool ruleaza = true;
+
+            while (ruleaza)
             {
-                Console.WriteLine("1. Client nou");
-                Console.WriteLine("2. Vizualizare lista clienti");
-                Console.WriteLine("3. Adauga comanda");
-                Console.WriteLine("4. Cauta client");
-                Console.WriteLine("5. Salveaza clienti in fisier");
+                Console.WriteLine("\n===== Meniu Principal =====");
+                Console.WriteLine("1. Adauga Client Nou");
+                Console.WriteLine("2. Vizualizare Lista Clienti");
+                Console.WriteLine("3. Adauga Comanda");
+                Console.WriteLine("4. Cauta Client");
+                Console.WriteLine("5. Salveaza in fisier");
                 Console.WriteLine("6. Iesire");
-                Console.Write("Optiune: ");
+                Console.Write("Alege o optiune: ");
 
-                var optiune = Console.ReadLine();
+                string optiune = Console.ReadLine();
+
                 switch (optiune)
                 {
                     case "1":
-                        Console.Write("Nume client: ");
-                        var nume = Console.ReadLine();
-                        Console.Write("Telefon client: ");
-                        var telefon = Console.ReadLine();
-                        var client = new Client(adminMem.GetClienti().Count + 1, nume, telefon);
-                        adminMem.AdaugaClient(client);
-                        adminFis.SalveazaClient(client);
-                        break;
-                    case "2":
-                        foreach (var c in adminMem.GetClienti())
-                            Console.WriteLine(c);
-                        break;
-                    case "3":
-                        Console.Write("ID client: ");
+                        Console.Write("Introdu ID client: ");
                         int idClient = int.Parse(Console.ReadLine());
-                        Console.Write("Nume produs: ");
-                        string numeProdus = Console.ReadLine();
-                        Console.Write("Pret produs: ");
-                        double pret = double.Parse(Console.ReadLine());
-                        var produs = new Produs(stoc.Produse.Count + 1, numeProdus, pret);
-                        stoc.AdaugaProdus(produs);
-                        var clientExist = adminMem.GetClienti().FirstOrDefault(c => c.Id == idClient);
-                        if (clientExist != null)
+
+                        Console.Write("Introdu nume client: ");
+                        string numeClient = Console.ReadLine();
+
+                        Console.Write("Introdu telefon client: ");
+                        string telefonClient = Console.ReadLine();
+
+                        clienti.Add(new Client(idClient, numeClient, telefonClient));
+                        Console.WriteLine("Client adaugat cu succes!");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("\n===== Lista Clienti =====");
+                        foreach (var client in clienti)
                         {
-                            clientExist.AdaugaComanda(produs);
-                            Console.WriteLine("Comanda adaugata!");
-                            adminFis.SalveazaTotiClientii(adminMem.GetClienti());
+                            Console.WriteLine(client);
+                        }
+                        break;
+
+                    case "3":
+                        Console.Write("Introdu ID client pentru comanda: ");
+                        int idCautat = int.Parse(Console.ReadLine());
+
+                        Client clientGasit = clienti.Find(c => c.Id == idCautat);
+
+                        if (clientGasit != null)
+                        {
+                            Console.WriteLine("Alege tipul produsului:");
+                            foreach (TipProdus tip in Enum.GetValues(typeof(TipProdus)))
+                            {
+                                Console.WriteLine($"{(int)tip}. {tip}");
+                            }
+
+                            Console.Write("Introdu optiunea: ");
+                            TipProdus tipProdus = (TipProdus)int.Parse(Console.ReadLine());
+
+                            Console.Write("Introdu numele produsului: ");
+                            string numeProdus = Console.ReadLine();
+
+                            Console.Write("Introdu pretul produsului: ");
+                            double pretProdus = double.Parse(Console.ReadLine());
+
+                            Produs nouProdus = new Produs(produse.Count + 1, numeProdus, pretProdus, tipProdus);
+                            clientGasit.AdaugaComanda(nouProdus);
+
+                            Console.WriteLine("Comanda adaugata cu succes!");
                         }
                         else
                         {
-                            Console.WriteLine("Client inexistent!");
+                            Console.WriteLine("Clientul nu a fost gasit.");
                         }
                         break;
+
                     case "4":
-                        Console.Write("Nume client: ");
-                        string cautaNume = Console.ReadLine();
-                        var gasit = adminFis.CitesteClienti().FirstOrDefault(c => c.Nume.Equals(cautaNume, StringComparison.OrdinalIgnoreCase));
-                        Console.WriteLine(gasit != null ? gasit.ToString() : "Client inexistent in fisier!");
+                        Console.Write("Introdu ID client pentru cautare: ");
+                        int idDeCautat = int.Parse(Console.ReadLine());
+
+                        Client clientCautat = clienti.Find(c => c.Id == idDeCautat);
+
+                        if (clientCautat != null)
+                        {
+                            Console.WriteLine(clientCautat);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Clientul nu a fost gasit.");
+                        }
                         break;
+
                     case "5":
-                        adminFis.SalveazaTotiClientii(adminMem.GetClienti());
+                        AdministrareClientiFisier admin = new AdministrareClientiFisier();
+                        admin.SalveazaTotiClientii(clienti);
                         Console.WriteLine("Datele au fost salvate in fisier!");
                         break;
+
                     case "6":
-                        return;
+                        ruleaza = false;
+                        Console.WriteLine("Iesire din aplicatie.");
+                        break;
+
                     default:
-                        Console.WriteLine("Optiune invalida!");
+                        Console.WriteLine("Optiune invalida. Reincearca.");
                         break;
                 }
             }

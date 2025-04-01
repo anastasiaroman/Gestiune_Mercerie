@@ -44,7 +44,9 @@
     <Compile Include="Client.cs" />
     <Compile Include="Produs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusComanda.cs" />
     <Compile Include="Stoc.cs" />
+    <Compile Include="TipProdus.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

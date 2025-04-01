@@ -27,8 +27,13 @@ namespace Mercerie
 
         public override string ToString()
         {
-            string comenziStr = Comenzi.Count > 0 ? string.Join("; ", Comenzi.Select(p => p.Nume)) : "Nicio comanda";
-            return $"ID: {Id}, Nume: {Nume}, Telefon: {Telefon}, Comenzi: {comenziStr}";
+            string comenziStr = Comenzi.Count > 0 ? string.Join("\n  - ", Comenzi.Select(p => p.ToString())) : "Nicio comanda";
+            return $"\n**********************************\n" +
+                   $" ID: {Id}\n" +
+                   $" Nume: {Nume}\n" +
+                   $" Telefon: {Telefon}\n" +
+                   $" Comenzi: \n  - {comenziStr}\n" +
+                   "**********************************\n";
         }
     }
 }

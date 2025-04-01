@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{594CA13D-AF82-4841-85B2-0DC459A3CA1B}|Mercerie\\Mercerie.csproj|solutionrelative:mercerie\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Produs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:EvidentaMercerie\\Produs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\evidentamercerie\\tipprodus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:evidentamercerie\\tipprodus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\evidentamercerie\\statuscomanda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:evidentamercerie\\statuscomanda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiFisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|solutionrelative:NivelStocareDate\\AdministrareClientiFisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +27,12 @@
       "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:EvidentaMercerie\\Client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|c:\\users\\roman\\documents\\github\\gestiune_mercerie\\mercerie\\nivelstocaredate\\administrareclientimemorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\nivelstocaredate\\administrareclientimemorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|solutionrelative:nivelstocaredate\\administrareclientimemorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Stoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:EvidentaMercerie\\Stoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Produs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD4B5494-27B1-4CE2-86B9-6A5346201AEA}|EvidentaMercerie\\EvidentaMercerie.csproj|solutionrelative:EvidentaMercerie\\Produs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,8 +45,24 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "TipProdus.cs",
+              "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\TipProdus.cs",
+              "RelativeDocumentMoniker": "EvidentaMercerie\\TipProdus.cs",
+              "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\TipProdus.cs",
+              "RelativeToolTip": "EvidentaMercerie\\TipProdus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:12:53.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AdministrareClientiMemorie.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiMemorie.cs",
               "RelativeDocumentMoniker": "NivelStocareDate\\AdministrareClientiMemorie.cs",
@@ -46,38 +70,60 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiMemorie.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T16:05:27.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T16:05:27.203Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Client.cs",
               "RelativeDocumentMoniker": "EvidentaMercerie\\Client.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Client.cs",
               "RelativeToolTip": "EvidentaMercerie\\Client.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAswCAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:22:16.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:22:16.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AdministrareClientiFisier.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiFisier.cs",
               "RelativeDocumentMoniker": "NivelStocareDate\\AdministrareClientiFisier.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiFisier.cs",
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiFisier.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAwwDkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:20:03.047Z",
+              "WhenOpened": "2025-03-31T15:20:03.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\Mercerie\\Program.cs",
+              "RelativeDocumentMoniker": "Mercerie\\Program.cs",
+              "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\Mercerie\\Program.cs",
+              "RelativeToolTip": "Mercerie\\Program.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAQwB0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T14:57:40.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "StatusComanda.cs",
+              "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\StatusComanda.cs",
+              "RelativeDocumentMoniker": "EvidentaMercerie\\StatusComanda.cs",
+              "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\StatusComanda.cs",
+              "RelativeToolTip": "EvidentaMercerie\\StatusComanda.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:13:08.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Stoc.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Stoc.cs",
               "RelativeDocumentMoniker": "EvidentaMercerie\\Stoc.cs",
@@ -89,28 +135,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Produs.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Produs.cs",
               "RelativeDocumentMoniker": "EvidentaMercerie\\Produs.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\EvidentaMercerie\\Produs.cs",
               "RelativeToolTip": "EvidentaMercerie\\Produs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T15:18:24.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\Mercerie\\Program.cs",
-              "RelativeDocumentMoniker": "Mercerie\\Program.cs",
-              "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\Mercerie\\Program.cs",
-              "RelativeToolTip": "Mercerie\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAkwDkAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:57:40.151Z",
-              "EditorCaption": ""
             }
           ]
         }
