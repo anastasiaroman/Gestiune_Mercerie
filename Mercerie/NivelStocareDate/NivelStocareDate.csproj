@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministrareClientiFisier.cs" />
     <Compile Include="AdministrareClientiMemorie.cs" />
+    <Compile Include="AdministrareProduseFisier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

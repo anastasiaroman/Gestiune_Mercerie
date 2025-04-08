@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MercerieApp")]
+[assembly: AssemblyTitle("InterfataUtilizator_WindowsForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MercerieApp")]
+[assembly: AssemblyProduct("InterfataUtilizator_WindowsForms")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("dd496b0e-e832-494a-9ad1-4f7ef6c52586")]
+[assembly: Guid("fcdea36b-3c32-482e-8eac-91983aeb3327")]
 
 // Version information for an assembly consists of the following four values:
 //

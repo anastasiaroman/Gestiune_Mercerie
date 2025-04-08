@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvidentaMercerie", "Evident
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NivelStocareDate", "NivelStocareDate\NivelStocareDate.csproj", "{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercerieApp", "MercerieApp\MercerieApp.csproj", "{DD496B0E-E832-494A-9AD1-4F7EF6C52586}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfataUtilizator_WindowsForms", "InterfataUtilizator_WindowsForms\InterfataUtilizator_WindowsForms.csproj", "{FCDEA36B-3C32-482E-8EAC-91983AEB3327}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD496B0E-E832-494A-9AD1-4F7EF6C52586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD496B0E-E832-494A-9AD1-4F7EF6C52586}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD496B0E-E832-494A-9AD1-4F7EF6C52586}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD496B0E-E832-494A-9AD1-4F7EF6C52586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDEA36B-3C32-482E-8EAC-91983AEB3327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDEA36B-3C32-482E-8EAC-91983AEB3327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDEA36B-3C32-482E-8EAC-91983AEB3327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDEA36B-3C32-482E-8EAC-91983AEB3327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

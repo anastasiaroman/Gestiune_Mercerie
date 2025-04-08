@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MercerieApp.Properties
+namespace InterfataUtilizator_WindowsForms.Properties
 {
 
 

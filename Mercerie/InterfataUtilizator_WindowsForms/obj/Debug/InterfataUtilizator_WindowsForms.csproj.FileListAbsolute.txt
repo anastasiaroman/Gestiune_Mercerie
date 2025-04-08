@@ -1,0 +1,14 @@
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe.config
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\EvidentaMercerie.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\NivelStocareDate.dll
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\EvidentaMercerie.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\bin\Debug\NivelStocareDate.pdb
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.AssemblyReference.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Properties.Resources.resources
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.GenerateResource.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\Interfat.43DF67F2.Up2Date
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.exe
+C:\Users\Roman\Documents\GitHub\Gestiune_Mercerie\Mercerie\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.pdb
