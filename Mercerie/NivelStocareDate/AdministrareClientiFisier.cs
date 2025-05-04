@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 using Mercerie;
 using EvidentaMercerie;
 
@@ -15,7 +13,7 @@ namespace Mercerie
 
         public void SalveazaClient(Client client)
         {
-            string comenzi = client.Comenzi.Count > 0 ? string.Join("|", client.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}")) : "Nicio comanda";
+            string comenzi = client.Comenzi.Count > 0 ? string.Join("|", client.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}-{p.Tip}")) : "Nicio comanda";
             File.AppendAllText(filePath, $"{client.Id},{client.Nume},{client.Telefon},{comenzi}\n");
         }
 
@@ -36,9 +34,14 @@ namespace Mercerie
                             foreach (var produs in produse)
                             {
                                 var detalii = produs.Split('-');
-                                if (detalii.Length == 4) // Adjusted to 4 to include 'tip'
+                                if (detalii.Length == 4) // Id, Nume, Pret, Tip
                                 {
-                                    client.AdaugaComanda(new Produs(int.Parse(detalii[0]), detalii[1], double.Parse(detalii[2]), (TipProdus)Enum.Parse(typeof(TipProdus), detalii[3])));
+                                    client.AdaugaComanda(new Produs(
+                                        int.Parse(detalii[0]),
+                                        detalii[1],
+                                        double.Parse(detalii[2]),
+                                        (TipProdus)Enum.Parse(typeof(TipProdus), detalii[3])
+                                    ));
                                 }
                             }
                         }
@@ -51,11 +54,11 @@ namespace Mercerie
 
         public void SalveazaTotiClientii(List<Client> clienti)
         {
-            File.WriteAllLines(filePath, clienti.Select(c => {
-                string comenzi = c.Comenzi.Count > 0 ? string.Join("|", c.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}")) : "Nicio comanda";
+            File.WriteAllLines(filePath, clienti.Select(c =>
+            {
+                string comenzi = c.Comenzi.Count > 0 ? string.Join("|", c.Comenzi.Select(p => $"{p.Id}-{p.Nume}-{p.Pret}-{p.Tip}")) : "Nicio comanda";
                 return $"{c.Id},{c.Nume},{c.Telefon},{comenzi}";
             }));
         }
     }
-
 }
