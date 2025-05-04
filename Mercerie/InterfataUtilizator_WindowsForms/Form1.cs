@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EvidentaMercerie;
@@ -19,6 +20,7 @@ namespace InterfataUtilizator_WindowsForms
     {
         private const int LUNGIME_MAXIMA_NUME = 15;
         private const double PRET_MINIM = 0.01;
+        private const string TELEFON_REGEX = @"^\d{10}$"; // 10 cifre
 
         private Label lblTitlu;
         private Label[] lblDenumiri;
@@ -187,7 +189,7 @@ namespace InterfataUtilizator_WindowsForms
             // Validare ID Client
             if (!int.TryParse(txtIdClient.Text, out idClient))
             {
-                lblErori[0].Text = "ID invalid!";
+                lblErori[0].Text = "ID invalid! Trebuie să fie un număr întreg.";
                 lblDenumiri[0].ForeColor = Color.Red;
                 esteValid = false;
             }
@@ -201,9 +203,9 @@ namespace InterfataUtilizator_WindowsForms
             }
 
             // Validare Telefon Client
-            if (string.IsNullOrWhiteSpace(txtTelefonClient.Text))
+            if (string.IsNullOrWhiteSpace(txtTelefonClient.Text) || !Regex.IsMatch(txtTelefonClient.Text, TELEFON_REGEX))
             {
-                lblErori[2].Text = "Telefon obligatoriu!";
+                lblErori[2].Text = "Telefon invalid! Trebuie să aibă 10 cifre.";
                 lblDenumiri[2].ForeColor = Color.Red;
                 esteValid = false;
             }
@@ -242,7 +244,7 @@ namespace InterfataUtilizator_WindowsForms
 
             if (!double.TryParse(txtPretProdus.Text, out pretProdus) || pretProdus < PRET_MINIM)
             {
-                lblErori[4].Text = $"Preț invalid (> {PRET_MINIM})!";
+                lblErori[4].Text = $"Preț invalid (>= {PRET_MINIM})!";
                 lblDenumiri[5].ForeColor = Color.Red;
                 esteValid = false;
             }
@@ -320,7 +322,7 @@ namespace InterfataUtilizator_WindowsForms
         private void StilizeazaForma()
         {
             this.Text = "Gestione Mercerie";
-            this.WindowState = FormWindowState.Maximized; // Full-screen
+            this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = true;
             this.MinimizeBox = true;

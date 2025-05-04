@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{594CA13D-AF82-4841-85B2-0DC459A3CA1B}|Mercerie\\Mercerie.csproj|solutionrelative:mercerie\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCDEA36B-3C32-482E-8EAC-91983AEB3327}|InterfataUtilizator_WindowsForms\\InterfataUtilizator_WindowsForms.csproj|c:\\users\\roman\\documents\\github\\gestiune_mercerie\\mercerie\\interfatautilizator_windowsforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FCDEA36B-3C32-482E-8EAC-91983AEB3327}|InterfataUtilizator_WindowsForms\\InterfataUtilizator_WindowsForms.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\interfatautilizator_windowsforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCDEA36B-3C32-482E-8EAC-91983AEB3327}|InterfataUtilizator_WindowsForms\\InterfataUtilizator_WindowsForms.csproj|solutionrelative:interfatautilizator_windowsforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -78,8 +78,7 @@
               "RelativeToolTip": "InterfataUtilizator_WindowsForms\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T14:19:34.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T14:19:34.774Z"
             },
             {
               "$type": "Document",
@@ -91,8 +90,7 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiFisier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:20:03.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:20:03.047Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "EvidentaMercerie\\StatusComanda.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T19:13:08.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T19:13:08.713Z"
             },
             {
               "$type": "Document",
@@ -117,8 +114,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Stoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:18:25.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:18:25.794Z"
             },
             {
               "$type": "Document",
@@ -130,8 +126,7 @@
               "RelativeToolTip": "EvidentaMercerie\\TipProdus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T19:12:53.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T19:12:53.13Z"
             },
             {
               "$type": "Document",
@@ -143,8 +138,7 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiMemorie.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T16:05:27.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T16:05:27.203Z"
             },
             {
               "$type": "Document",
@@ -154,7 +148,7 @@
               "RelativeDocumentMoniker": "InterfataUtilizator_WindowsForms\\Form1.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\InterfataUtilizator_WindowsForms\\Form1.cs",
               "RelativeToolTip": "InterfataUtilizator_WindowsForms\\Form1.cs",
-              "ViewState": "AgIAADIBAAAAAAAAAAAuwFgBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADMBAAAAAAAAAAAQwFoBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T20:34:52.056Z",
               "EditorCaption": ""
@@ -169,8 +163,7 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareProduseFisier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:43:17.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T20:43:17.736Z"
             },
             {
               "$type": "Document",
@@ -182,8 +175,7 @@
               "RelativeToolTip": "Mercerie\\Program.cs",
               "ViewState": "AgIAAFgAAAAAAAAAAAAwwH4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:57:40.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T14:57:40.151Z"
             },
             {
               "$type": "Document",
@@ -195,8 +187,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Produs.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADwvyMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:18:24.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:18:24.695Z"
             },
             {
               "$type": "Document",
@@ -208,8 +199,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Client.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAwwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:22:16.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:22:16.65Z"
             },
             {
               "$type": "Document",
