@@ -22,7 +22,20 @@ namespace Mercerie
 
         public Client CautaClient(string nume)
         {
-            return clienti.FirstOrDefault(c => c.Nume == nume);
+            return clienti.FirstOrDefault(c => c.Nume.Equals(nume, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public List<Client> CautaClienti(string criteriu)
+        {
+            if (string.IsNullOrWhiteSpace(criteriu))
+                return clienti;
+
+            criteriu = criteriu.ToLower();
+            return clienti.Where(c =>
+                c.Id.ToString().Contains(criteriu) ||
+                c.Nume.ToLower().Contains(criteriu) ||
+                c.Telefon.ToLower().Contains(criteriu)
+            ).ToList();
         }
     }
 }

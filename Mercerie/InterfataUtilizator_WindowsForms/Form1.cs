@@ -23,26 +23,37 @@ namespace InterfataUtilizator_WindowsForms
         private const string TELEFON_REGEX = @"^\d{10}$"; // 10 cifre
 
         private Label lblTitlu;
+        private GroupBox grpClient;
         private Label[] lblDenumiri;
         private Label[] lblErori;
         private TextBox txtIdClient;
         private TextBox txtNumeClient;
         private TextBox txtTelefonClient;
-        private CheckBox[] chkTipProdus;
+        private ComboBox cmbTipProdus;
         private TextBox txtNumeProdus;
         private TextBox txtPretProdus;
         private Button btnAdauga;
         private Button btnAfiseaza;
+        private Button btnReset;
+        private TextBox txtCautare;
+        private Button btnCautare;
         private DataGridView dgvClienti;
+        private ToolTip toolTip;
 
         private List<Client> clienti = new List<Client>();
         private AdministrareClientiFisier adminFisier;
+        private AdministrareClientiMemorie adminMemorie;
 
         public Form1()
         {
             InitializeComponent();
             adminFisier = new AdministrareClientiFisier();
+            adminMemorie = new AdministrareClientiMemorie();
             clienti = adminFisier.CitesteClienti();
+            foreach (var client in clienti)
+            {
+                adminMemorie.AdaugaClient(client);
+            }
             InitializeazaInterfata();
             StilizeazaForma();
             ActualizeazaTabel();
@@ -50,18 +61,38 @@ namespace InterfataUtilizator_WindowsForms
 
         private void InitializeazaInterfata()
         {
+            toolTip = new ToolTip();
+
+            // Setăm dimensiunea ferestrei pentru a acomoda toate elementele
+            this.Size = new Size(1280, 720);
+
             // Titlu
             lblTitlu = new Label
             {
                 Text = "Gestionare Clienti Mercerie",
-                Top = 40,
-                Left = 50,
-                Width = 500,
+                Top = 10,
+                Width = 600,
+                Height = 50,
                 AutoSize = false,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Arial", 16, FontStyle.Bold)
+                Font = new Font("Segoe UI", 24, FontStyle.Bold),
+                ForeColor = Color.Black
             };
+            lblTitlu.Left = (this.ClientSize.Width - lblTitlu.Width) / 2;
             this.Controls.Add(lblTitlu);
+
+            // GroupBox pentru introducere date
+            grpClient = new GroupBox
+            {
+                Text = "Introducere Client și Comanda",
+                Top = 70,
+                Left = 50,
+                Width = 600, // Creștem lățimea pentru a acomoda mesajele de eroare
+                Height = 500,
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                ForeColor = Color.DarkSlateGray
+            };
+            this.Controls.Add(grpClient);
 
             // Etichete și câmpuri de introducere
             string[] denumiri = { "ID Client:", "Nume Client:", "Telefon Client:", "Tip Produs:", "Nume Produs:", "Preț Produs (RON):" };
@@ -73,102 +104,153 @@ namespace InterfataUtilizator_WindowsForms
                 lblErori[i] = new Label
                 {
                     ForeColor = Color.Red,
-                    AutoSize = true,
-                    Top = 100 + i * 50,
-                    Left = 450,
-                    Font = new Font("Arial", 10)
+                    AutoSize = false, // Dezactivăm AutoSize pentru a controla dimensiunea
+                    Top = 40 + i * 60,
+                    Left = 300, // Mutăm mai la stânga pentru a oferi spațiu
+                    Width = 280, // Setăm o lățime fixă pentru a acomoda mesajele lungi
+                    Height = 40, // Creștem înălțimea pentru a permite împachetarea textului
+                    Font = new Font("Segoe UI", 10),
+                    AutoEllipsis = true // Adăugăm elipsă dacă textul este prea lung
                 };
-                this.Controls.Add(lblErori[i]);
+                grpClient.Controls.Add(lblErori[i]);
             }
 
             // ID Client
-            lblDenumiri[0] = new Label { Text = denumiri[0], Top = 100, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            txtIdClient = new TextBox { Top = 100, Left = 200, Width = 200, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[0]);
-            this.Controls.Add(txtIdClient);
+            lblDenumiri[0] = new Label { Text = denumiri[0], Top = 40, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtIdClient = new TextBox { Top = 40, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            grpClient.Controls.Add(lblDenumiri[0]);
+            grpClient.Controls.Add(txtIdClient);
 
             // Nume Client
-            lblDenumiri[1] = new Label { Text = denumiri[1], Top = 150, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            txtNumeClient = new TextBox { Top = 150, Left = 200, Width = 200, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[1]);
-            this.Controls.Add(txtNumeClient);
+            lblDenumiri[1] = new Label { Text = denumiri[1], Top = 100, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtNumeClient = new TextBox { Top = 100, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            grpClient.Controls.Add(lblDenumiri[1]);
+            grpClient.Controls.Add(txtNumeClient);
 
             // Telefon Client
-            lblDenumiri[2] = new Label { Text = denumiri[2], Top = 200, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            txtTelefonClient = new TextBox { Top = 200, Left = 200, Width = 200, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[2]);
-            this.Controls.Add(txtTelefonClient);
+            lblDenumiri[2] = new Label { Text = denumiri[2], Top = 160, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtTelefonClient = new TextBox { Top = 160, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            grpClient.Controls.Add(lblDenumiri[2]);
+            grpClient.Controls.Add(txtTelefonClient);
 
-            // Tip Produs (Checkbox-uri)
-            lblDenumiri[3] = new Label { Text = denumiri[3], Top = 250, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[3]);
-
-            chkTipProdus = new CheckBox[Enum.GetValues(typeof(TipProdus)).Length];
-            int topOffset = 250;
-            int index = 0;
+            // Tip Produs (ComboBox)
+            lblDenumiri[3] = new Label { Text = denumiri[3], Top = 220, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            cmbTipProdus = new ComboBox
+            {
+                Top = 220,
+                Left = 150,
+                Width = 180,
+                Font = new Font("Segoe UI", 12),
+                DropDownStyle = ComboBoxStyle.DropDownList
+            };
             foreach (TipProdus tip in Enum.GetValues(typeof(TipProdus)))
             {
-                chkTipProdus[index] = new CheckBox
-                {
-                    Text = tip.ToString(),
-                    Top = topOffset,
-                    Left = 200,
-                    AutoSize = true,
-                    Font = new Font("Arial", 12)
-                };
-                this.Controls.Add(chkTipProdus[index]);
-                topOffset += 30;
-                index++;
+                cmbTipProdus.Items.Add(tip);
             }
+            cmbTipProdus.SelectedIndex = 0;
+            grpClient.Controls.Add(lblDenumiri[3]);
+            grpClient.Controls.Add(cmbTipProdus);
 
             // Nume Produs
-            lblDenumiri[4] = new Label { Text = denumiri[4], Top = topOffset + 20, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            txtNumeProdus = new TextBox { Top = topOffset + 20, Left = 200, Width = 200, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[4]);
-            this.Controls.Add(txtNumeProdus);
+            lblDenumiri[4] = new Label { Text = denumiri[4], Top = 280, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtNumeProdus = new TextBox { Top = 280, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            grpClient.Controls.Add(lblDenumiri[4]);
+            grpClient.Controls.Add(txtNumeProdus);
 
             // Preț Produs
-            lblDenumiri[5] = new Label { Text = denumiri[5], Top = topOffset + 70, Left = 50, AutoSize = true, Font = new Font("Arial", 12) };
-            txtPretProdus = new TextBox { Top = topOffset + 70, Left = 200, Width = 200, Font = new Font("Arial", 12) };
-            this.Controls.Add(lblDenumiri[5]);
-            this.Controls.Add(txtPretProdus);
+            lblDenumiri[5] = new Label { Text = denumiri[5], Top = 340, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtPretProdus = new TextBox { Top = 340, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            grpClient.Controls.Add(lblDenumiri[5]);
+            grpClient.Controls.Add(txtPretProdus);
 
             // Butoane
             btnAdauga = new Button
             {
                 Text = "Adaugă",
-                Top = topOffset + 120,
-                Left = 200,
+                Top = 410,
+                Left = 50,
                 Width = 100,
                 Height = 40,
-                Font = new Font("Arial", 12),
-                BackColor = Color.LightGreen
+                Font = new Font("Segoe UI", 12),
+                BackColor = Color.FromArgb(144, 238, 144), // LightGreen
+                ForeColor = Color.Black
             };
             btnAdauga.Click += BtnAdauga_Click;
-            this.Controls.Add(btnAdauga);
+            grpClient.Controls.Add(btnAdauga);
+
+            btnReset = new Button
+            {
+                Text = "Reset",
+                Top = 410,
+                Left = 170,
+                Width = 100,
+                Height = 40,
+                Font = new Font("Segoe UI", 12),
+                BackColor = Color.FromArgb(255, 182, 193), // LightPink
+                ForeColor = Color.Black
+            };
+            btnReset.Click += BtnReset_Click;
+            grpClient.Controls.Add(btnReset);
 
             btnAfiseaza = new Button
             {
-                Text = "Afișează",
-                Top = topOffset + 120,
-                Left = 320,
+                Text = "Afișează Toți",
+                Top = 410,
+                Left = 290,
                 Width = 100,
                 Height = 40,
-                Font = new Font("Arial", 12),
-                BackColor = Color.LightBlue
+                Font = new Font("Segoe UI", 12),
+                BackColor = Color.FromArgb(135, 206, 250), // LightSkyBlue
+                ForeColor = Color.Black
             };
             btnAfiseaza.Click += BtnAfiseaza_Click;
-            this.Controls.Add(btnAfiseaza);
+            grpClient.Controls.Add(btnAfiseaza);
+
+            // Căutare
+            Label lblCautare = new Label
+            {
+                Text = "Caută Client (ID/Nume/Telefon):",
+                Top = 580,
+                Left = 50,
+                AutoSize = true,
+                Font = new Font("Segoe UI", 12),
+                ForeColor = Color.DarkSlateGray
+            };
+            txtCautare = new TextBox
+            {
+                Top = 580,
+                Left = 300,
+                Width = 180,
+                Font = new Font("Segoe UI", 12)
+            };
+            btnCautare = new Button
+            {
+                Text = "Caută",
+                Top = 580,
+                Left = 490,
+                Width = 100,
+                Height = 40,
+                Font = new Font("Segoe UI", 12),
+                BackColor = Color.FromArgb(255, 215, 0), // Gold (galben)
+                ForeColor = Color.Black
+            };
+            btnCautare.Click += BtnCautare_Click;
+            this.Controls.Add(lblCautare);
+            this.Controls.Add(txtCautare);
+            this.Controls.Add(btnCautare);
 
             // DataGridView pentru afișare
             dgvClienti = new DataGridView
             {
-                Top = 100,
-                Left = 600,
-                Width = 600,
-                Height = 600,
+                Top = 70,
+                Left = 700, // Mutăm mai la dreapta pentru a face loc GroupBox-ului mai lat
+                Width = 550, // Reducem lățimea pentru a se potrivi în fereastră
+                Height = 580,
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                ReadOnly = true
+                ReadOnly = true,
+                Font = new Font("Segoe UI", 10),
+                BackgroundColor = Color.White,
+                BorderStyle = BorderStyle.FixedSingle
             };
             dgvClienti.Columns.Add("Id", "ID");
             dgvClienti.Columns.Add("Nume", "Nume");
@@ -191,6 +273,7 @@ namespace InterfataUtilizator_WindowsForms
             {
                 lblErori[0].Text = "ID invalid! Trebuie să fie un număr întreg.";
                 lblDenumiri[0].ForeColor = Color.Red;
+                toolTip.SetToolTip(txtIdClient, "ID invalid! Trebuie să fie un număr întreg.");
                 esteValid = false;
             }
 
@@ -199,6 +282,7 @@ namespace InterfataUtilizator_WindowsForms
             {
                 lblErori[1].Text = $"Nume obligatoriu (max {LUNGIME_MAXIMA_NUME} caractere)!";
                 lblDenumiri[1].ForeColor = Color.Red;
+                toolTip.SetToolTip(txtNumeClient, $"Nume obligatoriu (max {LUNGIME_MAXIMA_NUME} caractere)!");
                 esteValid = false;
             }
 
@@ -207,31 +291,21 @@ namespace InterfataUtilizator_WindowsForms
             {
                 lblErori[2].Text = "Telefon invalid! Trebuie să aibă 10 cifre.";
                 lblDenumiri[2].ForeColor = Color.Red;
+                toolTip.SetToolTip(txtTelefonClient, "Telefon invalid! Trebuie să aibă 10 cifre.");
                 esteValid = false;
             }
 
             // Validare Tip Produs
-            int tipSelectat = -1;
-            for (int i = 0; i < chkTipProdus.Length; i++)
-            {
-                if (chkTipProdus[i].Checked)
-                {
-                    if (tipSelectat != -1)
-                    {
-                        lblErori[3].Text = "Selectați un singur tip!";
-                        lblDenumiri[3].ForeColor = Color.Red;
-                        esteValid = false;
-                        break;
-                    }
-                    tipSelectat = i;
-                    tipProdus = (TipProdus)(i + 1); // TipProdus începe de la 1
-                }
-            }
-            if (tipSelectat == -1)
+            if (cmbTipProdus.SelectedItem == null)
             {
                 lblErori[3].Text = "Selectați un tip de produs!";
                 lblDenumiri[3].ForeColor = Color.Red;
+                toolTip.SetToolTip(cmbTipProdus, "Selectați un tip de produs!");
                 esteValid = false;
+            }
+            else
+            {
+                tipProdus = (TipProdus)cmbTipProdus.SelectedItem;
             }
 
             // Validare Nume și Preț Produs
@@ -239,6 +313,7 @@ namespace InterfataUtilizator_WindowsForms
             {
                 lblErori[4].Text = $"Nume produs obligatoriu (max {LUNGIME_MAXIMA_NUME} caractere)!";
                 lblDenumiri[4].ForeColor = Color.Red;
+                toolTip.SetToolTip(txtNumeProdus, $"Nume produs obligatoriu (max {LUNGIME_MAXIMA_NUME} caractere)!");
                 esteValid = false;
             }
 
@@ -246,6 +321,7 @@ namespace InterfataUtilizator_WindowsForms
             {
                 lblErori[4].Text = $"Preț invalid (>= {PRET_MINIM})!";
                 lblDenumiri[5].ForeColor = Color.Red;
+                toolTip.SetToolTip(txtPretProdus, $"Preț invalid (>= {PRET_MINIM})!");
                 esteValid = false;
             }
 
@@ -260,6 +336,7 @@ namespace InterfataUtilizator_WindowsForms
             {
                 client = new Client(idClient, txtNumeClient.Text, txtTelefonClient.Text);
                 clienti.Add(client);
+                adminMemorie.AdaugaClient(client);
             }
             else
             {
@@ -279,28 +356,45 @@ namespace InterfataUtilizator_WindowsForms
             ActualizeazaTabel();
 
             // Resetăm câmpurile
-            txtIdClient.Clear();
-            txtNumeClient.Clear();
-            txtTelefonClient.Clear();
-            txtNumeProdus.Clear();
-            txtPretProdus.Clear();
-            foreach (var chk in chkTipProdus)
-            {
-                chk.Checked = false;
-            }
+            ResetFormular();
 
             MessageBox.Show("Client și comanda salvate cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnAfiseaza_Click(object sender, EventArgs e)
         {
+            txtCautare.Clear();
             ActualizeazaTabel();
         }
 
-        private void ActualizeazaTabel()
+        private void BtnCautare_Click(object sender, EventArgs e)
+        {
+            string criteriu = txtCautare.Text.Trim();
+            var clientiFiltrati = adminMemorie.CautaClienti(criteriu);
+            ActualizeazaTabel(clientiFiltrati);
+
+            if (clientiFiltrati.Count == 0)
+            {
+                MessageBox.Show("Niciun client găsit!", "Căutare", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ResetFormular()
+        {
+            txtIdClient.Clear();
+            txtNumeClient.Clear();
+            txtTelefonClient.Clear();
+            txtNumeProdus.Clear();
+            txtPretProdus.Clear();
+            cmbTipProdus.SelectedIndex = 0;
+            ResetErori();
+        }
+
+        private void ActualizeazaTabel(List<Client> clientiAfisati = null)
         {
             dgvClienti.Rows.Clear();
-            foreach (var client in clienti)
+            var listaAfisare = clientiAfisati ?? clienti;
+            foreach (var client in listaAfisare)
             {
                 string comenziStr = client.Comenzi.Count > 0 ? string.Join("; ", client.Comenzi.Select(p => $"{p.Nume} ({p.Pret} RON)")) : "Nicio comandă";
                 dgvClienti.Rows.Add(client.Id, client.Nume, client.Telefon, comenziStr);
@@ -317,20 +411,20 @@ namespace InterfataUtilizator_WindowsForms
                     lblDenumiri[i].ForeColor = Color.DarkSlateGray;
                 }
             }
+            toolTip.RemoveAll();
         }
 
         private void StilizeazaForma()
         {
-            this.Text = "Gestione Mercerie";
-            this.WindowState = FormWindowState.Maximized;
+            this.Text = "Gestiune Mercerie";
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = true;
             this.MinimizeBox = true;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(240, 248, 255);
+            this.BackColor = Color.FromArgb(245, 245, 220); // Beige
 
-            lblTitlu.ForeColor = Color.Navy;
-            lblTitlu.BackColor = Color.LightGray;
+            lblTitlu.BackColor = Color.FromArgb(169, 169, 169); // DarkGray pentru contrast
+            grpClient.BackColor = Color.FromArgb(240, 255, 240); // Honeydew
             foreach (var lbl in lblDenumiri)
             {
                 lbl.ForeColor = Color.DarkSlateGray;
@@ -340,8 +434,13 @@ namespace InterfataUtilizator_WindowsForms
             txtTelefonClient.BackColor = Color.White;
             txtNumeProdus.BackColor = Color.White;
             txtPretProdus.BackColor = Color.White;
-            btnAdauga.ForeColor = Color.Black;
-            btnAfiseaza.ForeColor = Color.Black;
+            txtCautare.BackColor = Color.White;
+            cmbTipProdus.BackColor = Color.White;
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            ResetFormular();
         }
     }
 }

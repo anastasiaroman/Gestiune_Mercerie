@@ -1,2 +1,2 @@
-1,Roman Anastasia,0744840535,1-Catifea-15-Ata|2-Set Ochi-2-Accesorii
-2,Derscanu Bianca,0733555678,1-Ace-14-Materiale
+1,Roman Anastasia,0123456789,1-Catifea-15-Ata
+2,Roman Mihaela ,0023456789,1-Nasturi-10-Accesorii
