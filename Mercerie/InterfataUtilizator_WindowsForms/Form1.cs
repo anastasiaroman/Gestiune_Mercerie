@@ -39,6 +39,10 @@ namespace InterfataUtilizator_WindowsForms
         private Button btnCautare;
         private DataGridView dgvClienti;
         private ToolTip toolTip;
+        private RadioButton rbAdaugaClient;
+        private RadioButton rbEditeazaClient;
+        private CheckBox chkSalvareAutomata;
+        private ComboBox cmbCriteriuCautare;
 
         private List<Client> clienti = new List<Client>();
         private AdministrareClientiFisier adminFisier;
@@ -64,7 +68,7 @@ namespace InterfataUtilizator_WindowsForms
             toolTip = new ToolTip();
 
             // Setăm dimensiunea ferestrei pentru a acomoda toate elementele
-            this.Size = new Size(1280, 720);
+            this.Size = new Size(1400, 720);
 
             // Titlu
             lblTitlu = new Label
@@ -87,57 +91,90 @@ namespace InterfataUtilizator_WindowsForms
                 Text = "Introducere Client și Comanda",
                 Top = 70,
                 Left = 50,
-                Width = 600, // Creștem lățimea pentru a acomoda mesajele de eroare
-                Height = 500,
+                Width = 600,
+                Height = 550,
                 Font = new Font("Segoe UI", 12, FontStyle.Bold),
                 ForeColor = Color.DarkSlateGray
             };
             this.Controls.Add(grpClient);
 
+            // RadioButton pentru Adauga/Editare
+            rbAdaugaClient = new RadioButton
+            {
+                Text = "Adaugă Client Nou",
+                Top = 30,
+                Left = 20,
+                Width = 150,
+                Font = new Font("Segoe UI", 12),
+                Checked = true
+            };
+            rbEditeazaClient = new RadioButton
+            {
+                Text = "Editează Client Existent",
+                Top = 30,
+                Left = 200,
+                Width = 180,
+                Font = new Font("Segoe UI", 12)
+            };
+            grpClient.Controls.Add(rbAdaugaClient);
+            grpClient.Controls.Add(rbEditeazaClient);
+
+            // CheckBox pentru salvare automată
+            chkSalvareAutomata = new CheckBox
+            {
+                Text = "Salvează automat în fișier",
+                Top = 60,
+                Left = 20,
+                Width = 250, // Mărire lățime pentru a afișa textul complet
+                Font = new Font("Segoe UI", 12),
+                Checked = true
+            };
+            grpClient.Controls.Add(chkSalvareAutomata);
+
             // Etichete și câmpuri de introducere
             string[] denumiri = { "ID Client:", "Nume Client:", "Telefon Client:", "Tip Produs:", "Nume Produs:", "Preț Produs (RON):" };
             lblDenumiri = new Label[denumiri.Length];
-            lblErori = new Label[5]; // Pentru ID, Nume, Telefon, Nume Produs, Preț
+            lblErori = new Label[5];
 
             for (int i = 0; i < lblErori.Length; i++)
             {
                 lblErori[i] = new Label
                 {
                     ForeColor = Color.Red,
-                    AutoSize = false, // Dezactivăm AutoSize pentru a controla dimensiunea
-                    Top = 40 + i * 60,
-                    Left = 300, // Mutăm mai la stânga pentru a oferi spațiu
-                    Width = 280, // Setăm o lățime fixă pentru a acomoda mesajele lungi
-                    Height = 40, // Creștem înălțimea pentru a permite împachetarea textului
+                    AutoSize = false,
+                    Top = 100 + i * 60,
+                    Left = 300,
+                    Width = 280,
+                    Height = 40,
                     Font = new Font("Segoe UI", 10),
-                    AutoEllipsis = true // Adăugăm elipsă dacă textul este prea lung
+                    AutoEllipsis = true
                 };
                 grpClient.Controls.Add(lblErori[i]);
             }
 
             // ID Client
-            lblDenumiri[0] = new Label { Text = denumiri[0], Top = 40, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
-            txtIdClient = new TextBox { Top = 40, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[0] = new Label { Text = denumiri[0], Top = 100, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtIdClient = new TextBox { Top = 100, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
             grpClient.Controls.Add(lblDenumiri[0]);
             grpClient.Controls.Add(txtIdClient);
 
             // Nume Client
-            lblDenumiri[1] = new Label { Text = denumiri[1], Top = 100, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
-            txtNumeClient = new TextBox { Top = 100, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[1] = new Label { Text = denumiri[1], Top = 160, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtNumeClient = new TextBox { Top = 160, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
             grpClient.Controls.Add(lblDenumiri[1]);
             grpClient.Controls.Add(txtNumeClient);
 
             // Telefon Client
-            lblDenumiri[2] = new Label { Text = denumiri[2], Top = 160, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
-            txtTelefonClient = new TextBox { Top = 160, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[2] = new Label { Text = denumiri[2], Top = 220, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtTelefonClient = new TextBox { Top = 220, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
             grpClient.Controls.Add(lblDenumiri[2]);
             grpClient.Controls.Add(txtTelefonClient);
 
             // Tip Produs (ComboBox)
-            lblDenumiri[3] = new Label { Text = denumiri[3], Top = 220, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[3] = new Label { Text = denumiri[3], Top = 280, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
             cmbTipProdus = new ComboBox
             {
-                Top = 220,
+                Top = 280,
                 Left = 150,
                 Width = 180,
                 Font = new Font("Segoe UI", 12),
@@ -152,27 +189,27 @@ namespace InterfataUtilizator_WindowsForms
             grpClient.Controls.Add(cmbTipProdus);
 
             // Nume Produs
-            lblDenumiri[4] = new Label { Text = denumiri[4], Top = 280, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
-            txtNumeProdus = new TextBox { Top = 280, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[4] = new Label { Text = denumiri[4], Top = 340, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtNumeProdus = new TextBox { Top = 340, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
             grpClient.Controls.Add(lblDenumiri[4]);
             grpClient.Controls.Add(txtNumeProdus);
 
             // Preț Produs
-            lblDenumiri[5] = new Label { Text = denumiri[5], Top = 340, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
-            txtPretProdus = new TextBox { Top = 340, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
+            lblDenumiri[5] = new Label { Text = denumiri[5], Top = 400, Left = 20, AutoSize = true, Font = new Font("Segoe UI", 12) };
+            txtPretProdus = new TextBox { Top = 400, Left = 150, Width = 180, Font = new Font("Segoe UI", 12) };
             grpClient.Controls.Add(lblDenumiri[5]);
             grpClient.Controls.Add(txtPretProdus);
 
             // Butoane
             btnAdauga = new Button
             {
-                Text = "Adaugă",
-                Top = 410,
+                Text = "Adaugă/Editează",
+                Top = 460,
                 Left = 50,
-                Width = 100,
+                Width = 120,
                 Height = 40,
                 Font = new Font("Segoe UI", 12),
-                BackColor = Color.FromArgb(144, 238, 144), // LightGreen
+                BackColor = Color.FromArgb(144, 238, 144),
                 ForeColor = Color.Black
             };
             btnAdauga.Click += BtnAdauga_Click;
@@ -181,12 +218,12 @@ namespace InterfataUtilizator_WindowsForms
             btnReset = new Button
             {
                 Text = "Reset",
-                Top = 410,
-                Left = 170,
+                Top = 460,
+                Left = 190,
                 Width = 100,
                 Height = 40,
                 Font = new Font("Segoe UI", 12),
-                BackColor = Color.FromArgb(255, 182, 193), // LightPink
+                BackColor = Color.FromArgb(255, 182, 193),
                 ForeColor = Color.Black
             };
             btnReset.Click += BtnReset_Click;
@@ -195,12 +232,12 @@ namespace InterfataUtilizator_WindowsForms
             btnAfiseaza = new Button
             {
                 Text = "Afișează Toți",
-                Top = 410,
-                Left = 290,
+                Top = 460,
+                Left = 310,
                 Width = 100,
                 Height = 40,
                 Font = new Font("Segoe UI", 12),
-                BackColor = Color.FromArgb(135, 206, 250), // LightSkyBlue
+                BackColor = Color.FromArgb(135, 206, 250),
                 ForeColor = Color.Black
             };
             btnAfiseaza.Click += BtnAfiseaza_Click;
@@ -209,33 +246,44 @@ namespace InterfataUtilizator_WindowsForms
             // Căutare
             Label lblCautare = new Label
             {
-                Text = "Caută Client (ID/Nume/Telefon):",
-                Top = 580,
+                Text = "Caută Client:",
+                Top = 630,
                 Left = 50,
                 AutoSize = true,
                 Font = new Font("Segoe UI", 12),
                 ForeColor = Color.DarkSlateGray
             };
+            cmbCriteriuCautare = new ComboBox
+            {
+                Top = 630,
+                Left = 150,
+                Width = 120,
+                Font = new Font("Segoe UI", 12),
+                DropDownStyle = ComboBoxStyle.DropDownList
+            };
+            cmbCriteriuCautare.Items.AddRange(new string[] { "ID", "Nume", "Telefon" });
+            cmbCriteriuCautare.SelectedIndex = 0;
             txtCautare = new TextBox
             {
-                Top = 580,
-                Left = 300,
+                Top = 630,
+                Left = 280,
                 Width = 180,
                 Font = new Font("Segoe UI", 12)
             };
             btnCautare = new Button
             {
                 Text = "Caută",
-                Top = 580,
-                Left = 490,
+                Top = 630,
+                Left = 470,
                 Width = 100,
                 Height = 40,
                 Font = new Font("Segoe UI", 12),
-                BackColor = Color.FromArgb(255, 215, 0), // Gold (galben)
+                BackColor = Color.FromArgb(255, 215, 0),
                 ForeColor = Color.Black
             };
             btnCautare.Click += BtnCautare_Click;
             this.Controls.Add(lblCautare);
+            this.Controls.Add(cmbCriteriuCautare);
             this.Controls.Add(txtCautare);
             this.Controls.Add(btnCautare);
 
@@ -243,8 +291,8 @@ namespace InterfataUtilizator_WindowsForms
             dgvClienti = new DataGridView
             {
                 Top = 70,
-                Left = 700, // Mutăm mai la dreapta pentru a face loc GroupBox-ului mai lat
-                Width = 550, // Reducem lățimea pentru a se potrivi în fereastră
+                Left = 700,
+                Width = 650,
                 Height = 580,
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 ReadOnly = true,
@@ -255,7 +303,14 @@ namespace InterfataUtilizator_WindowsForms
             dgvClienti.Columns.Add("Id", "ID");
             dgvClienti.Columns.Add("Nume", "Nume");
             dgvClienti.Columns.Add("Telefon", "Telefon");
-            dgvClienti.Columns.Add("Comenzi", "Comenzi");
+            var comenziColumn = new DataGridViewColumn
+            {
+                Name = "Comenzi",
+                HeaderText = "Comenzi",
+                CellTemplate = new DataGridViewTextBoxCell(),
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            };
+            dgvClienti.Columns.Add(comenziColumn);
             this.Controls.Add(dgvClienti);
         }
 
@@ -330,16 +385,26 @@ namespace InterfataUtilizator_WindowsForms
                 return;
             }
 
-            // Creare sau actualizare client
+            // Logica pentru Adăugare/Editare
             Client client = clienti.Find(c => c.Id == idClient);
-            if (client == null)
+            if (rbAdaugaClient.Checked)
             {
+                if (client != null)
+                {
+                    MessageBox.Show("ID-ul există deja! Alegeți un alt ID sau selectați 'Editează Client Existent'.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 client = new Client(idClient, txtNumeClient.Text, txtTelefonClient.Text);
                 clienti.Add(client);
                 adminMemorie.AdaugaClient(client);
             }
-            else
+            else // rbEditeazaClient.Checked
             {
+                if (client == null)
+                {
+                    MessageBox.Show("Clientul nu există! Selectați 'Adaugă Client Nou' pentru a crea un client nou.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 client.Nume = txtNumeClient.Text;
                 client.Telefon = txtTelefonClient.Text;
             }
@@ -351,8 +416,12 @@ namespace InterfataUtilizator_WindowsForms
                 client.AdaugaComanda(produs);
             }
 
-            // Salvăm în fișier
-            adminFisier.SalveazaTotiClientii(clienti);
+            // Salvare în fișier dacă este bifat CheckBox-ul
+            if (chkSalvareAutomata.Checked)
+            {
+                adminFisier.SalveazaTotiClientii(clienti);
+            }
+
             ActualizeazaTabel();
 
             // Resetăm câmpurile
@@ -370,7 +439,31 @@ namespace InterfataUtilizator_WindowsForms
         private void BtnCautare_Click(object sender, EventArgs e)
         {
             string criteriu = txtCautare.Text.Trim();
-            var clientiFiltrati = adminMemorie.CautaClienti(criteriu);
+            string campCautare = cmbCriteriuCautare.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(campCautare))
+            {
+                MessageBox.Show("Selectați un câmp pentru căutare!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            List<Client> clientiFiltrati = new List<Client>();
+            switch (campCautare)
+            {
+                case "ID":
+                    if (int.TryParse(criteriu, out int id))
+                    {
+                        clientiFiltrati = clienti.Where(c => c.Id == id).ToList();
+                    }
+                    break;
+                case "Nume":
+                    clientiFiltrati = clienti.Where(c => c.Nume.ToLower().Contains(criteriu.ToLower())).ToList();
+                    break;
+                case "Telefon":
+                    clientiFiltrati = clienti.Where(c => c.Telefon.Contains(criteriu)).ToList();
+                    break;
+            }
+
             ActualizeazaTabel(clientiFiltrati);
 
             if (clientiFiltrati.Count == 0)
@@ -387,6 +480,8 @@ namespace InterfataUtilizator_WindowsForms
             txtNumeProdus.Clear();
             txtPretProdus.Clear();
             cmbTipProdus.SelectedIndex = 0;
+            rbAdaugaClient.Checked = true;
+            chkSalvareAutomata.Checked = true;
             ResetErori();
         }
 
@@ -396,9 +491,12 @@ namespace InterfataUtilizator_WindowsForms
             var listaAfisare = clientiAfisati ?? clienti;
             foreach (var client in listaAfisare)
             {
-                string comenziStr = client.Comenzi.Count > 0 ? string.Join("; ", client.Comenzi.Select(p => $"{p.Nume} ({p.Pret} RON)")) : "Nicio comandă";
+                string comenziStr = client.Comenzi.Count > 0 ? string.Join("\n", client.Comenzi.Select(p => $"{p.Nume} ({p.Pret} RON)")) : "Nicio comandă";
                 dgvClienti.Rows.Add(client.Id, client.Nume, client.Telefon, comenziStr);
             }
+            // Ajustăm lățimea coloanei "Comenzi" pentru a se potrivi conținutului
+            dgvClienti.Columns["Comenzi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvClienti.AutoResizeColumns();
         }
 
         private void ResetErori()
@@ -421,10 +519,10 @@ namespace InterfataUtilizator_WindowsForms
             this.MaximizeBox = true;
             this.MinimizeBox = true;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(245, 245, 220); // Beige
+            this.BackColor = Color.FromArgb(245, 245, 220);
 
-            lblTitlu.BackColor = Color.FromArgb(169, 169, 169); // DarkGray pentru contrast
-            grpClient.BackColor = Color.FromArgb(240, 255, 240); // Honeydew
+            lblTitlu.BackColor = Color.FromArgb(169, 169, 169);
+            grpClient.BackColor = Color.FromArgb(240, 255, 240);
             foreach (var lbl in lblDenumiri)
             {
                 lbl.ForeColor = Color.DarkSlateGray;
@@ -436,6 +534,7 @@ namespace InterfataUtilizator_WindowsForms
             txtPretProdus.BackColor = Color.White;
             txtCautare.BackColor = Color.White;
             cmbTipProdus.BackColor = Color.White;
+            cmbCriteriuCautare.BackColor = Color.White;
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
