@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{FCDEA36B-3C32-482E-8EAC-91983AEB3327}|InterfataUtilizator_WindowsForms\\InterfataUtilizator_WindowsForms.csproj|solutionrelative:interfatautilizator_windowsforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\nivelstocaredate\\administrareprodusefisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|solutionrelative:nivelstocaredate\\administrareprodusefisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\nivelstocaredate\\administrareclientimemorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|solutionrelative:nivelstocaredate\\administrareclientimemorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\nivelstocaredate\\administrareprodusefisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|solutionrelative:nivelstocaredate\\administrareprodusefisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9980E1F4-50CE-4FA7-A360-103AE9A25CF6}|NivelStocareDate\\NivelStocareDate.csproj|C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiFisier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -76,7 +76,7 @@
               "RelativeDocumentMoniker": "InterfataUtilizator_WindowsForms\\Form1.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\InterfataUtilizator_WindowsForms\\Form1.cs",
               "RelativeToolTip": "InterfataUtilizator_WindowsForms\\Form1.cs",
-              "ViewState": "AgIAAPkBAAAAAAAAAAAQwCACAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGMCAAAAAAAAAAAAAIUCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T20:34:52.056Z",
               "EditorCaption": ""
@@ -91,8 +91,7 @@
               "RelativeToolTip": "EvidentaMercerie\\StatusComanda.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T19:13:08.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T19:13:08.713Z"
             },
             {
               "$type": "Document",
@@ -104,8 +103,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Stoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:18:25.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:18:25.794Z"
             },
             {
               "$type": "Document",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "EvidentaMercerie\\TipProdus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T19:12:53.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T19:12:53.13Z"
             },
             {
               "$type": "Document",
@@ -130,8 +127,7 @@
               "RelativeToolTip": "Mercerie\\Program.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAQwH4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:57:40.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T14:57:40.151Z"
             },
             {
               "$type": "Document",
@@ -143,25 +139,24 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiFisier.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAAwDIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:20:03.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:20:03.047Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AdministrareClientiMemorie.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiMemorie.cs",
               "RelativeDocumentMoniker": "NivelStocareDate\\AdministrareClientiMemorie.cs",
               "ToolTip": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareClientiMemorie.cs",
               "RelativeToolTip": "NivelStocareDate\\AdministrareClientiMemorie.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAmwBsAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T16:05:27.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdministrareProduseFisier.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\Documents\\GitHub\\Gestiune_Mercerie\\Mercerie\\NivelStocareDate\\AdministrareProduseFisier.cs",
               "RelativeDocumentMoniker": "NivelStocareDate\\AdministrareProduseFisier.cs",
@@ -169,8 +164,7 @@
               "RelativeToolTip": "NivelStocareDate\\AdministrareProduseFisier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:43:17.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T20:43:17.736Z"
             },
             {
               "$type": "Document",
@@ -182,8 +176,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Produs.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAcwA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:18:24.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:18:24.695Z"
             },
             {
               "$type": "Document",
@@ -195,8 +188,7 @@
               "RelativeToolTip": "EvidentaMercerie\\Client.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAUwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:22:16.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T15:22:16.65Z"
             },
             {
               "$type": "Document",

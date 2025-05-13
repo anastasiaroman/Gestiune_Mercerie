@@ -25,17 +25,30 @@ namespace Mercerie
             return clienti.FirstOrDefault(c => c.Nume.Equals(nume, StringComparison.OrdinalIgnoreCase));
         }
 
-        public List<Client> CautaClienti(string criteriu)
+        public List<Client> CautaClienti(string criteriu, string campCautare)
         {
             if (string.IsNullOrWhiteSpace(criteriu))
                 return clienti;
 
             criteriu = criteriu.ToLower();
             return clienti.Where(c =>
-                c.Id.ToString().Contains(criteriu) ||
-                c.Nume.ToLower().Contains(criteriu) ||
-                c.Telefon.ToLower().Contains(criteriu)
+                (campCautare == "ID" && c.Id.ToString().Contains(criteriu)) ||
+                (campCautare == "Nume" && c.Nume.ToLower().Contains(criteriu)) ||
+                (campCautare == "Telefon" && c.Telefon.ToLower().Contains(criteriu))
             ).ToList();
+        }
+
+        public void ActualizeazaClient(Client clientActualizat)
+        {
+            int index = clienti.FindIndex(c => c.Id == clientActualizat.Id);
+            if (index != -1)
+            {
+                clienti[index] = clientActualizat;
+            }
+            else
+            {
+                throw new Exception($"Clientul cu ID-ul {clientActualizat.Id} nu a fost găsit în memorie.");
+            }
         }
     }
 }
